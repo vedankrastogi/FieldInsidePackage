@@ -1,25 +1,25 @@
 package Package;
 
 public class Implementation {
-    private int accountNumber;
-    private int balance;
+    private String accountNumber;
+    private double balance;
     private String customerName;
     private String email;
     private Long phoneNumber;
 
-    public int getAccountNumber() {
+    public String getAccountNumber() {
         return accountNumber;
     }
 
-    public void setAccountNumber(int accountNumber) {
+    public void setAccountNumber(String accountNumber) {
         this.accountNumber = accountNumber;
     }
 
-    public int getBalance() {
+    public double getBalance() {
         return balance;
     }
 
-    public void setBalance(int balance) {
+    public void setBalance(double balance) {
         this.balance = balance;
     }
 
@@ -46,9 +46,17 @@ public class Implementation {
     public void setEmail(String email) {
         this.email = email;
     }
-    public int depositfund(int amount){
-        this.balance=getBalance()+amount;
-        return balance;
+    public void depositfund(int amount){
+        this.balance=this.balance+amount;
+        System.out.println(this.balance);;
     }
-    
+    public void withdrawl(int money){
+        if(money>this.balance){
+            System.out.println("insufficient funds");
+        }
+        else{
+            this.balance=this.balance-money;
+        }
+        System.out.println(this.balance);
+    }
 }
